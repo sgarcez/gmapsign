@@ -15,14 +15,14 @@ This is required when using:
 
 ### Go Get
 
-```console
-◊ go install github.com/sgarcez/gmapsign/cmd/gmapsign@latest
+```
+go install github.com/sgarcez/gmapsign/cmd/gmapsign@latest
 ```
 
 ## Usage
 
-```console
-◊ echo "https://maps.googleapis.com/maps/api/staticmap?center=40.714%2C+-73.998&client=myclient&size=400x400&zoom=12" \
+```
+echo "https://maps.googleapis.com/maps/api/staticmap?center=40.714%2C+-73.998&client=myclient&size=400x400&zoom=12" \
   | gmapsign -key bXlrZXk=
 
 https://maps.googleapis.com/maps/api/staticmap?center=40.714%2C+-73.998&client=myclient&size=400x400&zoom=12&signature=C1UG9w-v41q7i1lISpZsw1xzOV8=
