@@ -18,7 +18,7 @@ import (
 func Pipeline(in io.Reader, out io.Writer, signKey []byte) error {
 	scanner := bufio.NewScanner(in)
 	for scanner.Scan() {
-		line := scanner.Text()
+		line := strings.TrimSpace(scanner.Text())
 		if line == "" {
 			continue
 		}
@@ -50,12 +50,9 @@ func Sign(raw string, key []byte) (string, error) {
 }
 
 func parseURL(in string) (*url.URL, error) {
-	in = strings.TrimSpace(in)
-
 	// replace literal unicode e.g. \u0026 -> &
 	in, err := strconv.Unquote("\"" + in + "\"")
 	if err != nil {
-		fmt.Println(in)
 		return nil, err
 	}
 
